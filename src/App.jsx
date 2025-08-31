@@ -10,7 +10,6 @@ const todayStr = () => {
 };
 
 const storageKey = (date) => `workout-${date}`;
-
 const clone = (v) => JSON.parse(JSON.stringify(v));
 
 /** 器具の表示ラベル */
@@ -171,6 +170,8 @@ const DEFAULT_PLAN = [
         type: "time",
         timeSec: 30,
         note: "体幹固定、膝を素早く胸へ。",
+        link:
+          "https://co-medical.mynavi.jp/contents/therapistplus/lifestyle/beauty/22453/",
       },
     ],
   },
@@ -202,9 +203,7 @@ function loadDay(date, plan) {
     try {
       const parsed = JSON.parse(raw);
       return parsed;
-    } catch {
-      // fallthrough
-    }
+    } catch {}
   }
   return makeEmptyLogFromPlan(plan);
 }
@@ -247,9 +246,7 @@ function Chip({ children, active = false }) {
     <span
       className={
         "inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium " +
-        (active
-          ? "bg-indigo-600 text-white"
-          : "bg-neutral-100 text-neutral-700")
+        (active ? "bg-indigo-600 text-white" : "bg-neutral-100 text-neutral-700")
       }
     >
       {children}
@@ -267,13 +264,7 @@ function SectionCard({ title, children }) {
 }
 
 /** セット入力行 */
-function SetRow({
-  idx,
-  entry,
-  onChange,
-  type, // "reps" | "time"
-  allowWeight,
-}) {
+function SetRow({ idx, entry, onChange, type, allowWeight }) {
   const set = entry.sets[idx];
   return (
     <div className="grid grid-cols-[auto,1fr,auto] items-center gap-3 rounded-xl border border-neutral-200 p-2">
@@ -417,9 +408,7 @@ export default function App() {
       <header className="flex items-center justify-between gap-3">
         <div>
           <h1 className="text-2xl font-bold">ワークアウト</h1>
-          <p className="text-sm text-neutral-600">
-            軽めで効く・全身（50〜60分）
-          </p>
+          <p className="text-sm text-neutral-600">軽めで効く・全身（50〜60分）</p>
         </div>
         <div className="flex items-center gap-2">
           <input
@@ -529,8 +518,18 @@ export default function App() {
                   </div>
                 </div>
 
-                {it.note && (
-                  <p className="mt-2 text-sm text-neutral-600">💡 {it.note}</p>
+                {it.note && <p className="mt-2 text-sm text-neutral-600">💡 {it.note}</p>}
+
+                {/* ← ここで「やり方はこちら」リンクを表示 */}
+                {it.link && (
+                  <a
+                    href={it.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-1 inline-block text-sm text-indigo-600 hover:underline"
+                  >
+                    👉 やり方はこちら
+                  </a>
                 )}
 
                 <div className="mt-3 space-y-2">
@@ -555,7 +554,7 @@ export default function App() {
       ))}
 
       <footer className="pb-10 text-center text-xs text-neutral-500">
-        © {new Date().getFullYear()} Workout for her
+        © {new Date().getFullYear()} Workout
       </footer>
     </div>
   );
