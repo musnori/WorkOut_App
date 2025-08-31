@@ -260,10 +260,19 @@ function Chip({ children, active = false }) {
   );
 }
 
-function SectionCard({ title, children }) {
+function SectionCard({ title, children, icon }) {
   return (
     <section className="bg-white rounded-2xl shadow-soft p-4 md:p-6">
-      <h2 className="text-lg font-semibold mb-3">{title}</h2>
+      <h2 className="text-lg font-semibold mb-3 flex items-center gap-2">
+        {title}
+        {icon && (
+          <img
+            src={icon}
+            alt="アイコン"
+            className="h-6 w-6 object-contain inline-block"
+          />
+        )}
+      </h2>
       <div className="space-y-4">{children}</div>
     </section>
   );
@@ -433,7 +442,7 @@ export default function App() {
       </header>
 
       {/* 進捗カード */}
-      <SectionCard title="今日の進捗">
+      <SectionCard title="今日の進捗" icon="/icon2.png">
         <div className="space-y-2">
           <div className="flex items-center justify-between text-sm">
             <span className="text-neutral-600">
