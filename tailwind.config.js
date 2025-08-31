@@ -1,6 +1,6 @@
 // tailwind.config.js
 export default {
-  content: ["./index.html", "./src/**/*.{js,jsx}"],
+  content: ["./index.html", "./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
       colors: {
@@ -10,7 +10,7 @@ export default {
           200: "#b9ecff",
           300: "#8ddfff",
           400: "#5ad1ff",
-          500: "#2bbfff",   // メイン
+          500: "#2bbfff",   // メイン水色
           600: "#199edb",
           700: "#147ea9",
           800: "#105e7d",

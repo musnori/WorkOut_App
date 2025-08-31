@@ -52,18 +52,17 @@ const DEFAULT_PLAN = [
         note: "膝とつま先は同方向。背中は真っ直ぐ。",
       },
       {
-  id: "lunge",
-  name: "ダンベル・ランジ",
-  equipment: ["dumbbell"],
-  sets: 3,
-  type: "reps",
-  reps: 10,
-  perSide: true,
-  allowWeight: true,
-  note: "大股で踏み出し、前足で体を支えるイメージ。",
-  link: "https://co-medical.mynavi.jp/contents/therapistplus/lifestyle/beauty/17503/"
-},
-
+        id: "lunge",
+        name: "ダンベル・ランジ",
+        equipment: ["dumbbell"],
+        sets: 3,
+        type: "reps",
+        reps: 10,
+        perSide: true,
+        allowWeight: true,
+        note: "大股で踏み出し、前足で体を支えるイメージ。",
+        link: "https://co-medical.mynavi.jp/contents/therapistplus/lifestyle/beauty/17503/",
+      },
       {
         id: "hipthrust",
         name: "ヒップスラスト",
@@ -91,86 +90,80 @@ const DEFAULT_PLAN = [
     section: "背中（姿勢改善）",
     items: [
       {
-  id: "latpulldown",
-  name: "ラットプルダウン",
-  equipment: ["machine"],
-  sets: 3,
-  type: "reps",
-  reps: 12,
-  allowWeight: true,
-  note: "バーを胸に引き下ろす。肩すくめない。",
-  link: "https://co-medical.mynavi.jp/contents/therapistplus/lifestyle/beauty/18800/"
-},
-
+        id: "latpulldown",
+        name: "ラットプルダウン",
+        equipment: ["machine"],
+        sets: 3,
+        type: "reps",
+        reps: 12,
+        allowWeight: true,
+        note: "バーを胸に引き下ろす。肩すくめない。",
+        link: "https://co-medical.mynavi.jp/contents/therapistplus/lifestyle/beauty/18800/",
+      },
     ],
   },
   {
     section: "胸・肩（上半身のライン）",
     items: [
       {
-  id: "chestpress",
-  name: "チェストプレス",
-  equipment: ["machine"],
-  sets: 3,
-  type: "reps",
-  reps: 12,
-  allowWeight: true,
-  note: "肩甲骨を寄せて押す。可動域は無理なく。",
-  link: "https://co-medical.mynavi.jp/contents/therapistplus/lifestyle/beauty/18092/"
-},
-
+        id: "chestpress",
+        name: "チェストプレス",
+        equipment: ["machine"],
+        sets: 3,
+        type: "reps",
+        reps: 12,
+        allowWeight: true,
+        note: "肩甲骨を寄せて押す。可動域は無理なく。",
+        link: "https://co-medical.mynavi.jp/contents/therapistplus/lifestyle/beauty/18092/",
+      },
       {
-  id: "shoulderpress",
-  name: "ショルダープレス",
-  equipment: ["dumbbell", "machine"],
-  sets: 3,
-  type: "reps",
-  reps: 10,
-  allowWeight: true,
-  note: "耳とダンベルが一直線。反り腰に注意。",
-  link: "https://co-medical.mynavi.jp/contents/therapistplus/lifestyle/beauty/20177/"
-},
-
+        id: "shoulderpress",
+        name: "ショルダープレス",
+        equipment: ["dumbbell", "machine"],
+        sets: 3,
+        type: "reps",
+        reps: 10,
+        allowWeight: true,
+        note: "耳とダンベルが一直線。反り腰に注意。",
+        link: "https://co-medical.mynavi.jp/contents/therapistplus/lifestyle/beauty/20177/",
+      },
     ],
   },
   {
     section: "体幹（お腹・くびれ）",
     items: [
       {
-  id: "plank",
-  name: "プランク",
-  equipment: ["bodyweight"],
-  sets: 3,
-  type: "time",
-  timeSec: 45,
-  note: "一直線をキープ。お尻が上がらないように。",
-  link: "https://co-medical.mynavi.jp/contents/therapistplus/lifestyle/beauty/17477/"
-},
-
+        id: "plank",
+        name: "プランク",
+        equipment: ["bodyweight"],
+        sets: 3,
+        type: "time",
+        timeSec: 45,
+        note: "一直線をキープ。お尻が上がらないように。",
+        link: "https://co-medical.mynavi.jp/contents/therapistplus/lifestyle/beauty/17477/",
+      },
       {
-  id: "sideplank",
-  name: "サイドプランク",
-  equipment: ["bodyweight"],
-  sets: 3,
-  type: "time",
-  timeSec: 30,
-  perSide: true,
-  note: "横腹に効かせる。肩の真下に肘。",
-  link: "https://co-medical.mynavi.jp/contents/therapistplus/lifestyle/beauty/20202/"
-},
-
+        id: "sideplank",
+        name: "サイドプランク",
+        equipment: ["bodyweight"],
+        sets: 3,
+        type: "time",
+        timeSec: 30,
+        perSide: true,
+        note: "横腹に効かせる。肩の真下に肘。",
+        link: "https://co-medical.mynavi.jp/contents/therapistplus/lifestyle/beauty/20202/",
+      },
       {
-  id: "russiantwist",
-  name: "ロシアンツイスト",
-  equipment: ["bodyweight", "dumbbell"],
-  sets: 3,
-  type: "reps",
-  reps: 20,
-  allowWeight: true,
-  note: "目線は正面、上体で捻る。反動NG。",
-  link: "https://news.mynavi.jp/article/training-15/"
-},
-
+        id: "russiantwist",
+        name: "ロシアンツイスト",
+        equipment: ["bodyweight", "dumbbell"],
+        sets: 3,
+        type: "reps",
+        reps: 20,
+        allowWeight: true,
+        note: "目線は正面、上体で捻る。反動NG。",
+        link: "https://news.mynavi.jp/article/training-15/",
+      },
     ],
   },
   {
@@ -184,8 +177,7 @@ const DEFAULT_PLAN = [
         type: "time",
         timeSec: 30,
         note: "体幹固定、膝を素早く胸へ。",
-        link:
-          "https://co-medical.mynavi.jp/contents/therapistplus/lifestyle/beauty/22453/",
+        link: "https://co-medical.mynavi.jp/contents/therapistplus/lifestyle/beauty/22453/",
       },
     ],
   },
@@ -260,7 +252,7 @@ function Chip({ children, active = false }) {
     <span
       className={
         "inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium " +
-        (active ? "bg-indigo-600 text-white" : "bg-neutral-100 text-neutral-700")
+        (active ? "bg-brand-500 text-white" : "bg-brand-100 text-brand-700")
       }
     >
       {children}
@@ -287,7 +279,7 @@ function SetRow({ idx, entry, onChange, type, allowWeight }) {
           type="checkbox"
           checked={set.done}
           onChange={(e) => onChange(idx, { done: e.target.checked })}
-          className="size-5 accent-indigo-600"
+          className="size-5 accent-brand-500"
         />
         <span className="text-sm text-neutral-600">SET {idx + 1}</span>
       </label>
@@ -356,7 +348,7 @@ function SetRow({ idx, entry, onChange, type, allowWeight }) {
 /** ---------- メイン App ---------- */
 export default function App() {
   const [date, setDate] = useState(todayStr());
-  const [plan, setPlan] = useState(DEFAULT_PLAN);
+  const [plan] = useState(DEFAULT_PLAN);
   const [log, setLog] = useState(() => loadDay(todayStr(), DEFAULT_PLAN));
   const restTimer = useCountdown();
 
@@ -422,7 +414,7 @@ export default function App() {
       <header className="flex items-center justify-between gap-3">
         <div>
           <h1 className="text-2xl font-bold">ワークアウト</h1>
-          <p className="text-sm text-neutral-600">軽めで効く・全身（50〜60分）</p>
+          <p className="text-sm text-neutral-600">淡い水色テーマ・全身（50〜60分）</p>
         </div>
         <div className="flex items-center gap-2">
           <input
@@ -433,7 +425,7 @@ export default function App() {
           />
           <button
             onClick={resetToday}
-            className="rounded-xl bg-neutral-100 hover:bg-neutral-200 px-3 py-2 text-sm"
+            className="rounded-xl bg-brand-100 hover:bg-brand-200 px-3 py-2 text-sm text-brand-800"
           >
             本日リセット
           </button>
@@ -451,9 +443,9 @@ export default function App() {
               総ボリューム：<b>{totalVolume}</b> kg･rep
             </span>
           </div>
-          <div className="w-full h-3 bg-neutral-200 rounded-full overflow-hidden">
+          <div className="w-full h-3 bg-brand-100 rounded-full overflow-hidden">
             <div
-              className="h-full bg-indigo-600"
+              className="h-full bg-brand-500"
               style={{ width: `${progressPct}%` }}
             />
           </div>
@@ -463,19 +455,19 @@ export default function App() {
         <div className="mt-3 flex items-center gap-2">
           <span className="text-sm text-neutral-600">休憩タイマー</span>
           <button
-            className="rounded-lg bg-indigo-600 text-white px-3 py-1 text-sm"
+            className="rounded-lg bg-brand-500 text-white px-3 py-1 text-sm hover:bg-brand-400"
             onClick={() => restTimer.start(30)}
           >
             ▶︎ 30秒
           </button>
           <button
-            className="rounded-lg bg-indigo-600 text-white px-3 py-1 text-sm"
+            className="rounded-lg bg-brand-500 text-white px-3 py-1 text-sm hover:bg-brand-400"
             onClick={() => restTimer.start(60)}
           >
             ▶︎ 60秒
           </button>
           {restTimer.active ? (
-            <span className="ml-2 text-sm font-semibold text-indigo-700">
+            <span className="ml-2 text-sm font-semibold text-brand-700">
               残り {restTimer.sec}s
             </span>
           ) : (
@@ -483,7 +475,7 @@ export default function App() {
           )}
           {restTimer.active && (
             <button
-              className="ml-auto rounded-lg bg-neutral-100 px-3 py-1 text-sm"
+              className="ml-auto rounded-lg bg-brand-100 px-3 py-1 text-sm hover:bg-brand-200"
               onClick={restTimer.stop}
             >
               停止
@@ -534,13 +526,13 @@ export default function App() {
 
                 {it.note && <p className="mt-2 text-sm text-neutral-600">💡 {it.note}</p>}
 
-                {/* ← ここで「やり方はこちら」リンクを表示 */}
+                {/* 「やり方はこちら」リンク */}
                 {it.link && (
                   <a
                     href={it.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mt-1 inline-block text-sm text-indigo-600 hover:underline"
+                    className="mt-1 inline-block text-sm text-brand-600 hover:underline"
                   >
                     👉 やり方はこちら
                   </a>
@@ -555,7 +547,6 @@ export default function App() {
                       type={it.type}
                       allowWeight={!!it.allowWeight && entry.chosenEquip !== "bodyweight"}
                       onChange={(setIndex, patch) => {
-                        // 左右各のときは、同じセット番号で左右やり分けてもOK設計（入力は共通）
                         updateSetField(it.id, setIndex, patch);
                       }}
                     />
