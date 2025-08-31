@@ -414,7 +414,7 @@ export default function App() {
       <header className="flex items-center justify-between gap-3">
         <div>
           <h1 className="text-2xl font-bold">ワークアウト</h1>
-          <p className="text-sm text-neutral-600">淡い水色テーマ・全身（50〜60分）</p>
+          <p className="text-sm text-neutral-600">全身（50〜60分）</p>
         </div>
         <div className="flex items-center gap-2">
           <input
