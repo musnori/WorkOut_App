@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState, useRef } from "react";
 
 /** ---------- ユーティリティ ---------- */
 const todayStr = () => {
@@ -48,7 +48,7 @@ const DEFAULT_PLAN = [
         sets: 3,
         type: "reps",
         reps: 12,
-        allowWeight: true, // ダンベル利用時は重量入力も可
+        allowWeight: true,
         note: "膝とつま先は同方向。背中は真っ直ぐ。",
       },
       {
@@ -246,7 +246,7 @@ function useCountdown() {
   return { sec, active, start, stop, reset };
 }
 
-/** ---------- UI コンポーネント ---------- */
+/** ---------- 汎用 UI ---------- */
 function Chip({ children, active = false }) {
   return (
     <span
@@ -275,6 +275,29 @@ function SectionCard({ title, children, icon }) {
       </h2>
       <div className="space-y-4">{children}</div>
     </section>
+  );
+}
+
+/** ごほうびオーバーレイ */
+function CongratsOverlay({ onClose }) {
+  return (
+    <div className="fixed inset-0 z-[100] bg-black/60 backdrop-blur-sm flex items-center justify-center p-6">
+      <div className="bg-white rounded-3xl max-w-sm w-full text-center p-6 shadow-2xl">
+        <img
+          src="/icon3.png"
+          alt="おつかれキャラ"
+          className="mx-auto w-40 h-40 object-contain mb-4"
+        />
+        <h3 className="text-xl font-bold mb-1">今日もお疲れ様！</h3>
+        <p className="text-neutral-600">よく頑張ったね！</p>
+        <button
+          onClick={onClose}
+          className="mt-5 w-full rounded-xl bg-brand-500 text-white py-2 hover:bg-brand-400"
+        >
+          閉じる
+        </button>
+      </div>
+    </div>
   );
 }
 
@@ -371,7 +394,7 @@ export default function App() {
     saveDay(date, log);
   }, [date, log]);
 
-  /** 進捗・ボリューム */
+  /** 進捗・ボリューム計算 */
   const { totalSets, doneSets, totalVolume } = useMemo(() => {
     let total = 0;
     let done = 0;
@@ -392,7 +415,19 @@ export default function App() {
     return { totalSets: total, doneSets: done, totalVolume: volume };
   }, [plan, log]);
 
-  /** ハンドラ群 */
+  /** 1日1回のごほうび表示制御（100%到達時） */
+  const [showCongrats, setShowCongrats] = useState(false);
+  const allDone = totalSets > 0 && doneSets === totalSets;
+  const prevAllDone = useRef(false);
+  useEffect(() => {
+    const key = `congrats-${date}`;
+    if (allDone && !prevAllDone.current && !localStorage.getItem(key)) {
+      setShowCongrats(true);
+      localStorage.setItem(key, "shown");
+    }
+    prevAllDone.current = allDone;
+  }, [allDone, date]);
+
   const updateEntry = (id, patch) => {
     setLog((prev) => {
       const next = clone(prev);
@@ -413,6 +448,7 @@ export default function App() {
   const resetToday = () => {
     if (!confirm("本日のチェックと入力をリセットします。よろしいですか？")) return;
     setLog(makeEmptyLogFromPlan(plan));
+    localStorage.removeItem(`congrats-${date}`); // 祝モーダルもリセット
   };
 
   const progressPct = totalSets ? Math.round((doneSets / totalSets) * 100) : 0;
@@ -570,6 +606,8 @@ export default function App() {
       <footer className="pb-10 text-center text-xs text-neutral-500">
         © {new Date().getFullYear()} Workout
       </footer>
+
+      {showCongrats && <CongratsOverlay onClose={() => setShowCongrats(false)} />}
     </div>
   );
 }
